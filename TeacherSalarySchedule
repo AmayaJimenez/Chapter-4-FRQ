@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+//Amaya Jimenez
+//September 29th, 2017
+//Period 6
+public class TeacherSalarySchedule {
+	public static void main (String args[]) {
+		double startingSalary;
+		double percentIncrease;
+		double numberOfYears;
+		double yearlySalary;
+		int count;
+		double newSalary;
+		
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter the starting salary: ");
+		startingSalary = reader.nextDouble();
+		newSalary = startingSalary;
+		
+		System.out.println("Enter the percent increase: ");
+		percentIncrease = reader.nextDouble();
+		
+		System.out.println("Enter the years needed to be calculated: ");
+		numberOfYears = reader.nextDouble() + 1;
+		
+		for (count = 0; count < numberOfYears; count++) {
+			if (count >= 1) {
+			yearlySalary = (startingSalary +  (newSalary * percentIncrease));
+			System.out.println("Year: " + count + " Salary:" + yearlySalary);
+			newSalary = (startingSalary +  (newSalary * percentIncrease));
+			}
+			else {
+				yearlySalary = (startingSalary + ( (newSalary * count) * percentIncrease));
+				System.out.println("Year: " + count + " Salary:" + yearlySalary);
+				yearlySalary = newSalary;
+			}
+			
+	
+		}
+	}
+
+}
+
